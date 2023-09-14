@@ -1,15 +1,23 @@
-package com.SpringWarriors.AdaAvanadeChallenge.model;
+package com.SpringWarriors.AdaAvanadeChallenge.entities;
 
 import jakarta.persistence.*;
-
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.Objects;
 
-@Entity
 @Data
+@Entity
+@SuperBuilder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Monster implements Serializable {
+    @Serial
+    private static final long serialVersionUID = -7094424639286357355L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -21,29 +29,15 @@ public class Monster implements Serializable {
     private int diceAmount; //quantidade de dados
     private int diceFaces; //faces do dado
 
-    public Monster(){
-
-    }
-    public Monster(String name, int hitPoints, int strength, int defense, int dexterity, int diceAmount, int diceFaces) {
-        this.name = name;
-        this.hitPoints = hitPoints;
-        this.strength = strength;
-        this.defense = defense;
-        this.dexterity = dexterity;
-        this.diceAmount = diceAmount;
-        this.diceFaces = diceFaces;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Monster monster = (Monster) o;
-        return Objects.equals(id, monster.id);
+        if (!(o instanceof Monster monster)) return false;
+        return Objects.equals(getId(), monster.getId());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(getId());
     }
 }

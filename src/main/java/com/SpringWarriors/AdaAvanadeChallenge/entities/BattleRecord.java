@@ -1,21 +1,30 @@
-package com.SpringWarriors.AdaAvanadeChallenge.model;
+package com.SpringWarriors.AdaAvanadeChallenge.entities;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 import org.antlr.v4.runtime.misc.NotNull;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.Objects;
 
-@Entity
 @Data
+@Entity
+@SuperBuilder
+@NoArgsConstructor
+@AllArgsConstructor
 public class BattleRecord implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 869886662353484250L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotNull
-    private String play;
+    private String player;
 
     @NotNull
     private String enemy;
@@ -35,19 +44,6 @@ public class BattleRecord implements Serializable {
     @NotNull
     private int damageCaused;
 
-    public BattleRecord(){
-
-    }
-
-    public BattleRecord(String play, String enemy, String firstToStrike, int turnNumber, int attackValue, int defenseValue, int damageCaused) {
-        this.play = play;
-        this.enemy = enemy;
-        this.firstToStrike = firstToStrike;
-        this.turnNumber = turnNumber;
-        this.attackValue = attackValue;
-        this.defenseValue = defenseValue;
-        this.damageCaused = damageCaused;
-    }
 
     @Override
     public boolean equals(Object o) {
