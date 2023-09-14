@@ -24,8 +24,8 @@ public class MonsterService {
         return obj.get();
     }
 
-    public Monster insert(Monster Monster) {
-        return repository.save(Monster);
+    public Monster insert(Monster obj) {
+        return repository.save(obj);
     }
 
     public void delete(Long id) {
