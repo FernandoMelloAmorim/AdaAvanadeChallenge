@@ -1,20 +1,23 @@
-package com.SpringWarriors.AdaAvanadeChallenge.model;
+package com.SpringWarriors.AdaAvanadeChallenge.entities;
 
 import jakarta.persistence.*;
-
-import lombok.Builder;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.Objects;
 
-@Entity
 @Data
-@Builder
+@Entity
+@SuperBuilder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Hero implements Serializable {
     @Serial
-    private static final long serialVersionUID = 1;
+    private static final long serialVersionUID = 7969735144145646628L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -26,26 +29,12 @@ public class Hero implements Serializable {
     private int diceAmount; //quantidade de dados
     private int diceFaces; //faces do dado
 
-    public Hero(){
-
-    }
-
-    public Hero(String name, int hitPoints, int strength, int defense, int dexterity, int diceAmount, int diceFaces) {
-        this.name = name;
-        this.hitPoints = hitPoints;
-        this.strength = strength;
-        this.defense = defense;
-        this.dexterity = dexterity;
-        this.diceAmount = diceAmount;
-        this.diceFaces = diceFaces;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Hero hero = (Hero) o;
-        return Objects.equals(id, hero.id);
+        Hero obj = (Hero) o;
+        return Objects.equals(id, obj.id);
     }
 
     @Override
