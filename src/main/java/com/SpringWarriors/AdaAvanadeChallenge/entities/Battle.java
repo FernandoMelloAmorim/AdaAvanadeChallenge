@@ -1,5 +1,6 @@
 package com.SpringWarriors.AdaAvanadeChallenge.entities;
 
+import com.SpringWarriors.AdaAvanadeChallenge.services.HeroService;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,7 +17,7 @@ import java.util.Objects;
 @SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
-public class BattleRecord implements Serializable {
+public class Battle implements Serializable {
     @Serial
     private static final long serialVersionUID = 869886662353484250L;
     @Id
@@ -44,12 +45,14 @@ public class BattleRecord implements Serializable {
     @NotNull
     private int damageCaused;
 
+    @NotNull
+    private int battleStatus;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        BattleRecord that = (BattleRecord) o;
+        Battle that = (Battle) o;
         return Objects.equals(id, that.id);
     }
 
@@ -57,4 +60,5 @@ public class BattleRecord implements Serializable {
     public int hashCode() {
         return Objects.hash(id);
     }
+
 }

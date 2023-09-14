@@ -24,8 +24,8 @@ public class HeroService {
         return obj.get();
     }
 
-    public Hero insert(Hero hero) {
-        return repository.save(hero);
+    public Hero insert(Hero obj) {
+        return repository.save(obj);
     }
 
     public void delete(Long id) {

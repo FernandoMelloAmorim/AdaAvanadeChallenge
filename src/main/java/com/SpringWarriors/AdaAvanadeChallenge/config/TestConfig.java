@@ -1,7 +1,10 @@
 package com.SpringWarriors.AdaAvanadeChallenge.config;
 
+import com.SpringWarriors.AdaAvanadeChallenge.entities.Battle;
+import com.SpringWarriors.AdaAvanadeChallenge.entities.BattleStatus;
 import com.SpringWarriors.AdaAvanadeChallenge.entities.Hero;
 import com.SpringWarriors.AdaAvanadeChallenge.entities.Monster;
+import com.SpringWarriors.AdaAvanadeChallenge.repositories.BattleRepository;
 import com.SpringWarriors.AdaAvanadeChallenge.repositories.HeroRepository;
 import com.SpringWarriors.AdaAvanadeChallenge.repositories.MonsterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +24,9 @@ public class TestConfig implements CommandLineRunner {
     @Autowired
     private MonsterRepository monsterRepository;
 
+    @Autowired
+    private BattleRepository battleRepository;
+
     @Override
     public void run(String... args) throws Exception {
         Hero h1 = new Hero(null,"Guerreiro", 20, 7, 5, 6, 1, 12);
@@ -34,5 +40,11 @@ public class TestConfig implements CommandLineRunner {
         Monster m3 = new Monster(null,"Lobisomen", 34, 7, 4, 7, 2, 4);
 
         monsterRepository.saveAll(Arrays.asList(m1,m2,m3));
+
+        Battle bl1 = new Battle(null,"Cavaleiro", "Orc", "Cavaleiro", 1, 5, 3, 2, 1);
+        Battle bl2 = new Battle(null,"Cavaleiro", "Orc", "Cavaleiro", 2, 3, 3, 0, 1);
+        Battle bl3 = new Battle(null,"Cavaleiro", "Orc", "Cavaleiro", 3, 30, 2, 28, 2);
+
+        battleRepository.saveAll(Arrays.asList(bl1,bl2,bl3));
     }
 }
