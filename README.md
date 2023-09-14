@@ -1,6 +1,6 @@
 # Spring Warriors - API Rest Java Spring Boot
 
-Bem-vindo a Spring Warriors, um projeto utilizando as tecnoloigas Spring Boot e PostgreSQL que permite criar personagens como heróis e monstros, além duelar em batalhas épicas em turnos! Este projeto é inspirado em jogos de RPG como Advanced Dungeons & Dragons (AD&D) e oferece funcionalidades para criar, gerenciar e duelar com personagens.
+Bem-vindo a Spring Warriors, um projeto utilizando as tecnologias Spring Boot e PostgreSQL que permite criar personagens como heróis e monstros, além duelar em batalhas épicas em turnos! Este projeto é inspirado em jogos de RPG como Advanced Dungeons & Dragons (AD&D) e oferece funcionalidades para criar, gerenciar e duelar com personagens. Inicialmente idealizado como projeto de conclusão do Bootcamp Java Academy da Ada Tech junto a empresa Avanade.
 
 ## Funcionalidades Principais
 
