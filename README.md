@@ -52,7 +52,6 @@ Bem-vindo a Spring Warriors, um projeto utilizando as tecnologias Spring Boot e 
 - POST /monsters: Cria um novo monstro.
 - PUT /monsters/{id}: Atualiza os dados de um monstro existente.
 - DELETE /monsters/{id}: Exclui um monstro.
-- POST /battle: Inicia uma batalha entre o jogador e um monstro inimigo.
 - GET /battleRecord: Retorna os detalhes de todas as batalhas.
 - GET /battleRecord/{id}: Retorna os detalhes de uma batalha específica.
 
