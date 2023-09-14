@@ -42,18 +42,31 @@ Bem-vindo a Spring Warriors, um projeto utilizando as tecnologias Spring Boot e 
 
 ## Endpoints Disponíveis
 
+### Herói
 - GET /heroes: Retorna a lista de todos os herói.
 - GET /heroes/{id}: Retorna os detalhes de um herói específico.
 - POST /heroes: Cria um novo herói.
 - PUT /heroes/{id}: Atualiza os dados de um herói existente.
 - DELETE /heroes/{id}: Exclui um herói.
+
+### Monstro
 - GET /monsters: Retorna a lista de todos os monstro.
 - GET /monsters/{id}: Retorna os detalhes de um monstro específico.
 - POST /monsters: Cria um novo monstro.
 - PUT /monsters/{id}: Atualiza os dados de um monstro existente.
 - DELETE /monsters/{id}: Exclui um monstro.
+
+### Batalha
 - GET /battleRecord: Retorna os detalhes de todas as batalhas.
 - GET /battleRecord/{id}: Retorna os detalhes de uma batalha específica.
+- GET /battle/checkInitiative: Calcula e retorna quem terá a iniciativa na batalha.
+- GET /battle/calculateAttack: Calcula o ataque mediante os valores de força e agilidade.
+- GET /battle/calculateDefense: Calcula a defesa mediante os valores de defesa e agilidade.
+- GET /battle/attackAction: Verifica a ação de ataque mediante os valores de força e agilidade do atacante e de defesa e agilidade do defensor.
+- GET /battle/calculateDamage: Calcula o dano do atacante mediante informações da personagem como quantidade de dados, quantidade de faces por dado e força.
+- GET /battle/calculateHP: Calcula a vida do defensor mediante o valor de vida e dano.
+- GET /battle/checkHP: Verifica o status da batalha mediante a vida do defensor. Usado após a ação de dano.
+- GET /battle/rollDice: Gera um número aleatório mediante a quantidade de faces.
 
 ## Contribuindo
 
